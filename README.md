@@ -1,4 +1,4 @@
-# Pretraining Concept Frequency determines Multimodal Model Performance [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-360/) [![PyTorch](https://img.shields.io/badge/PyTorch-grey.svg?logo=PyTorch)](https://pytorch.org/blog/pytorch-1.9-released/) [![Paper](http://img.shields.io/badge/paper-arxiv.2211.16198-B31B1B.svg)](https://arxiv.org/abs/2211.16198)
+# Pretraining Concept Frequency determines Multimodal Model Performance [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-360/) [![PyTorch](https://img.shields.io/badge/PyTorch-grey.svg?logo=PyTorch)](https://pytorch.org/blog/pytorch-1.9-released/) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/bethgelab/Let-It-Wag) [![Paper](http://img.shields.io/badge/paper-arxiv.2211.16198-B31B1B.svg)](https://arxiv.org/abs/2211.16198)
 
 This is the official codebase for the paper, "No Zero-Shot Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance".
 Authors: [Vishaal Udandarao*](http://vishaal27.github.io/), [Ameya Prabhu*](https://drimpossible.github.io/), [Adhiraj Ghosh](https://adhirajghosh.github.io/), [Yash Sharma](https://www.yash-sharma.com/), [Philip H.S. Torr](https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en), [Adel Bibi](https://www.adelbibi.com/), [Samuel Albanie](http://samuelalbanie.com/) and [Matthias Bethge](https://scholar.google.com/citations?user=0z0fNxUAAAAJ). 
@@ -62,16 +62,42 @@ python src/image_search_inverted_index_creation.py --pt_dataset <cc3m/cc12m/laio
 ```
 
 #### Concept frequency estimation
+Having constructed both the image and text indexes for efficient frequency estimation, we can run the image-only, text-only and image-text combined searches directly using:
+```bash
+# for image search
+python src/image_search_matches_inverted_index.py --pt_dataset <cc3m/cc12m/laion400m/...> --threshold <confidence_threshold_for_ram++> --downstream_dataset <coco/flickr/cifar10/t2i/...> --cache_dir <path_to_model_cache> --features_dir <path_to_store_features> --results_dir <path_to_store_results>
+
+# for text search
+python src/text_search_matches_inverted_index.py --pt_dataset <cc3m/cc12m/laion400m/...> --search_method lemmatized --downstream_dataset <coco/flickr/cifar10/t2i/...> --do_chunked_search True
+
+# for image-text search
+python src/integrated_search_matches_inverted_index.py --pt_dataset <cc3m/cc12m/laion400m/...> --downstream_dataset <coco/flickr/cifar10/t2i/...>
+```
+For more details on the parameters of each search script, please see the comments within each script directly. These scripts should write to the results folder directly. For convenience, we have included all our search results across all concepts, pretraining datasets and downstream datasets in this folder: [`search_counts`](https://github.com/bethgelab/frequency_determines_performance/tree/main/search_counts). These counts are directly used for the plots in our paper.
 
 #### Running downstream evaluations
+We provide scripts to evaluate all models on the downstream zero-shot classification and retrieval tasks:
+```bash
+# zero-shot classification
+python src/zero_shot_eval.py --backbone <RN50/RN101/ViT-B-32/...> --pretraining <cc3m/cc12m/yfcc15m/...> --text_prompts <simple/class/ensemble> --dataset <cifar10/imagenet/...> --cache_dir <path_to_model_cache> --features_dir <path_to_store_features> --results_dir <path_to_store_results>
+
+# retrieval
+python src/retrieval_eval.py --dataset <coco/flickr> --backbone <RN50/RN101/ViT-B-32/...> --pretraining <cc3m/cc12m/yfcc15m/...> --cache_dir <path_to_model_cache> --features_dir <path_to_store_features> --results_dir <path_to_store_results>
+```
+The results will be saved directly as json files. For convenience, we have also included all our result jsons here: [[zero-shot classification](https://github.com/bethgelab/frequency_determines_performance/tree/main/zero_shot_evaluations)] / [[retrieval](https://github.com/bethgelab/frequency_determines_performance/tree/main/retrieval_evaluations)] / [[text-to-image generation](https://github.com/bethgelab/frequency_determines_performance/tree/main/t2i_evaluations)].
 
 #### Plotting
-
-#### Stress-test experiments
+All the plots in our paper can be reproduced using the notebooks provided in the [`notebooks`](https://github.com/bethgelab/frequency_determines_performance/tree/main/notebooks) folder. The notebooks should be self-explanatory, please open an issue if something is unclear.
 
 #### Additional insights
+You can reproduce our long-tailed nature plot from the [`notebooks/long-tailed-nature.ipynb`](https://github.com/bethgelab/frequency_determines_performance/blob/main/notebooks/long-tailed-nature.ipynb) notebook. The correlations between different pretraining dataset concept distributions numbers can be reproduced here: [`notebooks/correlations_between_pretraining_frequencies.ipynb`](https://github.com/bethgelab/frequency_determines_performance/blob/main/notebooks/correlations_between_pretraining_frequencies.ipynb). Finally, for quantifying the misalignment ratio, this is the script we use:
+```bash
+python src/misalignment_degree_quantification.py --pt_dataset <cc3m/cc12m/laion400m/...> --cache_dir <path_to_model_cache> --features_dir <path_to_store_features> --results_dir <path_to_store_results>
+```
+We also provide the logs of the misalignment ratios we computed for all datasets here: [`https://github.com/bethgelab/frequency_determines_performance/tree/main/misalignment_metrics`](https://github.com/bethgelab/frequency_determines_performance/tree/main/misalignment_metrics).
 
 ## _Let It Wag!_ Dataset
+We provide details about the construction of the Let It Wag! dataset in the [`let_it_wag_datasets`](https://github.com/bethgelab/frequency_determines_performance/tree/main/let_it_wag_datasets) folder. The list of 290 concepts included in the dataset are here: [`let_it_wag_datasets/let_it_wag_class_list.txt`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/let_it_wag_class_list.txt). The full classification dataset is hosted on Huggingface: [https://huggingface.co/datasets/bethgelab/Let-It-Wag](https://huggingface.co/datasets/bethgelab/Let-It-Wag). All the zero-shot evaluations are released here: [`let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json)
 
 ## Contact
 Please feel free to open an issue or email us at [vu214@cam.ac.uk](mailto:vu214@cam.ac.uk) or [ameya@prabhu.be](mailto:ameya@prabhu.be).
