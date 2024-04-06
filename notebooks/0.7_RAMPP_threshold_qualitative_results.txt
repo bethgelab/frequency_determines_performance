@@ -1,0 +1,56 @@
+0.7 RAMPP threshold
+
+0                                                                                        
+000000000.jpg                                                                            
+park | parking_lot | street | bus | road | traffic | red | pedestrian | city | roadway   
+----------------                                                                         
+1                                                                                        
+000000001.jpg                                                                            
+T-shirt | microphone | stage | t-shirt | woman | female | pose | dress | white | clothe |
+ size | short | music | band | instrument | top | pant | shirt | image | attire | skirt |
+ clothing | picture | lady                                                               
+----------------                                                                         
+2                                                                                        
+000000002.jpg                                                                            
+wardrobe | stands | bedroom | closet | bed | girl | woman | floor | step | female | pose 
+| clothe | drawer | room | shirt | attire | clothing | lady                              
+----------------                                                                         
+3                                                                                        
+000000003.jpg                                                                            
+house | living_room | floor | step | white | home | stair | wall | fireplace | room | lig
+ht                             
+
+4
+000000004.jpg
+robot | illustration | white | arm | glove | blue | hand | silver
+----------------
+5
+000000005.jpg
+Basketball | basketball | man | crowd | pose | event | male | jersey | guy | men | game |
+ hand | spectator
+----------------
+6
+000000006.jpg
+park | pond | couple | island | outside | plant | flower | show | image | tree | garden |
+ design | water | green | picture
+----------------
+7
+000000007.jpg
+paisley | red | flower | color | green
+----------------
+8
+000000008.jpg
+hockey puck | man | white | male | jersey | ice | guy | uniform | skate | stick | men | b
+lue | game | playing
+
+9
+000000010.jpg
+airliner | park | parking_lot | raceway | runway | airplane | car | 707-320 | 727-200 | 7
+37-200 | 737-300 | 737-400 | 737-500 | 737-600 | 737-700 | 737-800 | 737-900 | 757-200 |
+757-300 | 767-200 | 767-300 | 767-400 | 777-200 | 777-300 | A318 | A319 | A320 | A321 | A
+330-200 | A330-300 | A340-200 | A340-300 | A340-500 | A340-600 | white | vehicle | plane
+| jet | airport | land | tarmac | jetliner
+----------------
+10
+000000013.jpg
+man | pose | event | male | carpet | men | red | party

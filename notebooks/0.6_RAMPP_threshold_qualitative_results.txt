@@ -1,0 +1,77 @@
+0.6 RAMPP threshold
+
+000000000.jpg                                                                            
+Highway or Road | park | parking_lot | plaza | street | car | truck | bus | man | road | 
+stop | crowd | couple | travel | white | outside | traffic | vehicle | ride | rain | red 
+| sidewalk | number | pavement | building | walk | cross | town | passenger | side | driv
+e | pedestrian | way | city | line | roadway                                             
+----------------                                                                         
+1                                                                                        
+000000001.jpg                                                                            
+drum | T-shirt | microphone | overskirt | stage | her | stands | gauzy | t-shirt | girl |
+ man | woman | step | female | pose | dress | white | clothe | pair | male | size | play 
+| set | short | look | photo | music | band | inside | men | background | instrument | bl
+ack | show | top | piece | pant | shirt | image | side | attire | skirt | leg | stand | c
+lothing | picture | lady | figure | vest | outfit | style | body     
+
+2                                                                                        
+000000002.jpg                                                                            
+jeans | radiator | wardrobe | studio | her | stands | portrait | bedroom | closet | clut$
+er | bed | girl | woman | floor | step | female | pose | white | object | clothe | home $
+ stair | size | stack | pile | short | rack | luggage | suitcase | drawer | room | top | 
+shirt | jacket | stuff | item | attire | smile | blanket | stand | clothing | pack | lad$
+ | figure | body | jean | cloth                                                          
+----------------
+3
+000000003.jpg
+baluster / handrail | lights | house | living_room | staircase | flooring | floor | step
+| frame | white | home | dark | stair | apartment | wall | fireplace | room | railing | l
+ight | furniture | image | fire | ceiling | brick | picture
+----------------
+4
+000000004.jpg
+robot | illustration | sky | sword | man | handle | white | male | arm | glove | blue | i
+mage | hand | closeup | surface | metal | silver | picture | figure | sculpture
+
+5
+000000005.jpg
+Basketball | basketball | chain | necklace | stage | her | people | man | woman | step |
+crowd | female | pose | event | onlooker | male | jersey | play | guy | individual | musi
+c | coach | men | player | audience | ball | show | top | game | someone | shirt | hand |
+ spectator | party | playing | person
+----------------
+6
+000000006.jpg
+dock | fountain | pier | website | circle | stands | diagram | illustration | River | Sea
+ or Lake | courtyard | park | pond | river | people | man | sea | floor | step | couple |
+ white | island | outside | grass | bush | path | lake | place | inside | area | plant |
+variety | walkway | flower | show | building | piece | ground | image | landscape | tree
+| structure | side | garden | design | setting | stand | water | green | picture | bench
+| figure | way | body | person
+----------------
+7
+000000007.jpg
+illustration | paisley | peacock | frame | set | square | red | flower | decoration | des
+ign | color | green | rug | pattern
+
+8                                                                                        
+000000008.jpg                                                                            
+hockey puck | man | floor | step | crowd | white | action | male | jersey | play | ice | 
+turn | up | short | guy | uniform | skate | stick | men | motion | player | blue | game $
+ surface | side | move | leg | spectator | water | sport | playing
+----------------
+9
+000000010.jpg
+airliner | outdoor arrival_gate | park | parking_lot | raceway | runway | airplane | air$
+lanes | car | truck | road | 707-320 | 727-200 | 737-200 | 737-300 | 737-400 | 737-500 |
+737-600 | 737-700 | 737-800 | 737-900 | 747-100 | 747-200 | 747-300 | 747-400 | 757-200 $
+ 757-300 | 767-200 | 767-300 | 767-400 | 777-200 | 777-300 | A300B4 | A310 | A318 | A319
+| A320 | A321 | A330-200 | A330-300 | A340-200 | A340-300 | A340-500 | A340-600 | ATR-72
+| Boeing 717 | CRJ-200 | CRJ-700 | CRJ-900 | DC-10 | DC-8 | DC-9-30 | E-170 | E-190 | E-$
+95 | ERJ 135 | ERJ 145 | Fokker 100 | Fokker 70 | L-1011 | MD-11 | MD-80 | MD-87 | MD-90
+| floor | couple | white | fence | vehicle | plane | jet | terminal | airport | flight |
+passenger | land | desert | drive | way | line | tarmac | jetliner | roadway
+
+10
+000000013.jpg
+cup | man | pose | event | male | carpet | guy | men | red | show | rug | party

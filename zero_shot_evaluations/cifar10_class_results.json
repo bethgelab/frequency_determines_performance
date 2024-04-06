@@ -1,0 +1,317 @@
+{
+    "backboneRN50_pretrainedcc3m": {
+        "full": 40.42,
+        "classwise": {
+            "plane": 30.5,
+            "car": 53.7,
+            "bird": 42.3,
+            "cat": 18.8,
+            "deer": 48.1,
+            "dog": 53.0,
+            "frog": 65.2,
+            "horse": 71.6,
+            "ship": 20.3,
+            "truck": 0.7
+        }
+    },
+    "backboneRN50_pretrainedcc12m": {
+        "full": 41.13,
+        "classwise": {
+            "plane": 16.9,
+            "car": 59.1,
+            "bird": 20.5,
+            "cat": 72.5,
+            "deer": 24.7,
+            "dog": 78.8,
+            "frog": 33.2,
+            "horse": 15.2,
+            "ship": 30.6,
+            "truck": 59.8
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion400m": {
+        "full": 85.1,
+        "classwise": {
+            "plane": 75.9,
+            "car": 96.2,
+            "bird": 87.4,
+            "cat": 79.2,
+            "deer": 75.4,
+            "dog": 92.7,
+            "frog": 57.8,
+            "horse": 94.6,
+            "ship": 98.5,
+            "truck": 93.3
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion2b": {
+        "full": 83.86,
+        "classwise": {
+            "plane": 74.0,
+            "car": 93.5,
+            "bird": 94.1,
+            "cat": 84.3,
+            "deer": 85.5,
+            "dog": 91.8,
+            "frog": 71.4,
+            "horse": 79.6,
+            "ship": 76.2,
+            "truck": 88.2
+        }
+    },
+    "backboneViT-B-32_pretraineddatacomp": {
+        "full": 95.48,
+        "classwise": {
+            "plane": 97.1,
+            "car": 97.7,
+            "bird": 90.9,
+            "cat": 90.7,
+            "deer": 94.5,
+            "dog": 93.5,
+            "frog": 94.6,
+            "horse": 98.6,
+            "ship": 98.0,
+            "truck": 99.2
+        }
+    },
+    "backboneViT-B-16_pretrainedlaion400m": {
+        "full": 86.62,
+        "classwise": {
+            "plane": 88.9,
+            "car": 82.4,
+            "bird": 95.0,
+            "cat": 57.2,
+            "deer": 85.0,
+            "dog": 90.8,
+            "frog": 81.8,
+            "horse": 94.7,
+            "ship": 91.8,
+            "truck": 98.6
+        }
+    },
+    "backboneViT-B-16_pretrainedlaion2b": {
+        "full": 91.0,
+        "classwise": {
+            "plane": 90.1,
+            "car": 97.6,
+            "bird": 94.3,
+            "cat": 84.5,
+            "deer": 93.6,
+            "dog": 95.0,
+            "frog": 79.3,
+            "horse": 95.0,
+            "ship": 97.9,
+            "truck": 82.7
+        }
+    },
+    "backboneViT-B-16_pretraineddatacomp": {
+        "full": 96.07,
+        "classwise": {
+            "plane": 96.5,
+            "car": 97.3,
+            "bird": 92.4,
+            "cat": 92.1,
+            "deer": 94.9,
+            "dog": 96.2,
+            "frog": 94.6,
+            "horse": 98.8,
+            "ship": 98.7,
+            "truck": 99.2
+        }
+    },
+    "backboneViT-B-16_pretrainedcc12m": {
+        "full": 52.99,
+        "classwise": {
+            "plane": 35.9,
+            "car": 99.5,
+            "bird": 36.7,
+            "cat": 25.3,
+            "deer": 72.0,
+            "dog": 85.3,
+            "frog": 22.1,
+            "horse": 62.4,
+            "ship": 53.2,
+            "truck": 37.5
+        }
+    },
+    "backboneViT-B-16_pretrainedcc3m": {
+        "full": 47.84,
+        "classwise": {
+            "plane": 20.0,
+            "car": 39.1,
+            "bird": 19.7,
+            "cat": 43.2,
+            "deer": 69.1,
+            "dog": 72.2,
+            "frog": 17.7,
+            "horse": 52.5,
+            "ship": 68.3,
+            "truck": 76.6
+        }
+    },
+    "backboneViT-L-14_pretrainedlaion400m": {
+        "full": 94.05,
+        "classwise": {
+            "plane": 93.2,
+            "car": 97.1,
+            "bird": 92.1,
+            "cat": 90.0,
+            "deer": 95.8,
+            "dog": 92.5,
+            "frog": 88.0,
+            "horse": 98.1,
+            "ship": 94.7,
+            "truck": 99.0
+        }
+    },
+    "backboneViT-L-14_pretrainedlaion2b": {
+        "full": 91.7,
+        "classwise": {
+            "plane": 97.1,
+            "car": 98.1,
+            "bird": 95.6,
+            "cat": 92.0,
+            "deer": 95.3,
+            "dog": 95.0,
+            "frog": 81.9,
+            "horse": 96.0,
+            "ship": 83.2,
+            "truck": 82.8
+        }
+    },
+    "backboneViT-L-14_pretraineddatacomp": {
+        "full": 98.4,
+        "classwise": {
+            "plane": 98.8,
+            "car": 98.8,
+            "bird": 97.5,
+            "cat": 95.9,
+            "deer": 97.5,
+            "dog": 97.9,
+            "frog": 98.7,
+            "horse": 99.7,
+            "ship": 99.3,
+            "truck": 99.9
+        }
+    },
+    "backboneViT-H-14_pretrainedlaion2b": {
+        "full": 95.0,
+        "classwise": {
+            "plane": 96.5,
+            "car": 98.8,
+            "bird": 91.9,
+            "cat": 97.9,
+            "deer": 93.6,
+            "dog": 87.4,
+            "frog": 89.6,
+            "horse": 99.1,
+            "ship": 98.5,
+            "truck": 96.7
+        }
+    },
+    "backboneViT-g-14_pretrainedlaion2b": {
+        "full": 94.81,
+        "classwise": {
+            "plane": 95.0,
+            "car": 98.8,
+            "bird": 94.0,
+            "cat": 91.7,
+            "deer": 98.2,
+            "dog": 97.9,
+            "frog": 83.7,
+            "horse": 99.3,
+            "ship": 91.4,
+            "truck": 98.1
+        }
+    },
+    "backboneViT-bigG-14_pretrainedlaion2b": {
+        "full": 96.78,
+        "classwise": {
+            "plane": 98.5,
+            "car": 95.4,
+            "bird": 95.4,
+            "cat": 97.4,
+            "deer": 98.7,
+            "dog": 96.8,
+            "frog": 93.4,
+            "horse": 99.3,
+            "ship": 93.2,
+            "truck": 99.7
+        }
+    },
+    "backboneRN50_pretrainedyfcc15m": {
+        "full": 34.03,
+        "classwise": {
+            "plane": 51.6,
+            "car": 52.8,
+            "bird": 23.9,
+            "cat": 16.2,
+            "deer": 1.4,
+            "dog": 97.2,
+            "frog": 3.1,
+            "horse": 34.9,
+            "ship": 24.2,
+            "truck": 35.0
+        }
+    },
+    "backboneRN101_pretrainedyfcc15m": {
+        "full": 43.92,
+        "classwise": {
+            "plane": 21.1,
+            "car": 73.3,
+            "bird": 82.4,
+            "cat": 37.1,
+            "deer": 32.7,
+            "dog": 74.7,
+            "frog": 32.3,
+            "horse": 34.2,
+            "ship": 6.0,
+            "truck": 45.4
+        }
+    },
+    "backboneViT-B-16_pretrainedyfcc15m": {
+        "full": 64.05,
+        "classwise": {
+            "plane": 73.6,
+            "car": 46.0,
+            "bird": 75.5,
+            "cat": 64.0,
+            "deer": 36.7,
+            "dog": 71.0,
+            "frog": 35.7,
+            "horse": 71.0,
+            "ship": 73.3,
+            "truck": 93.7
+        }
+    },
+    "backboneViT-B-16_pretrainedsynthci30m": {
+        "full": 21.21,
+        "classwise": {
+            "plane": 32.0,
+            "car": 1.7,
+            "bird": 73.3,
+            "cat": 11.1,
+            "deer": 46.6,
+            "dog": 16.8,
+            "frog": 0.1,
+            "horse": 2.1,
+            "ship": 0.0,
+            "truck": 28.4
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion200m_train_test_sim_normalized": {
+        "full": 80.01,
+        "classwise": {
+            "plane": 90.2,
+            "car": 94.5,
+            "bird": 85.6,
+            "cat": 48.8,
+            "deer": 88.2,
+            "dog": 72.6,
+            "frog": 45.8,
+            "horse": 95.9,
+            "ship": 89.4,
+            "truck": 89.1
+        }
+    }
+}

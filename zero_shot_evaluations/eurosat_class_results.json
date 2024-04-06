@@ -1,0 +1,317 @@
+{
+    "backboneRN50_pretrainedcc3m": {
+        "full": 19.012345679012345,
+        "classwise": {
+            "Annual Crop Land": 0.1111111111111111,
+            "Forest": 97.0,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 1.0666666666666667,
+            "Industrial Buildings": 7.333333333333333,
+            "Pasture Land": 7.0,
+            "Permanent Crop Land": 58.93333333333333,
+            "Residential Buildings": 0.0,
+            "River": 10.533333333333333,
+            "Sea or Lake": 4.444444444444445
+        }
+    },
+    "backboneRN50_pretrainedcc12m": {
+        "full": 14.592592592592593,
+        "classwise": {
+            "Annual Crop Land": 0.0,
+            "Forest": 0.0,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 7.866666666666666,
+            "Industrial Buildings": 41.733333333333334,
+            "Pasture Land": 42.333333333333336,
+            "Permanent Crop Land": 14.266666666666667,
+            "Residential Buildings": 0.5555555555555556,
+            "River": 44.93333333333333,
+            "Sea or Lake": 11.88888888888889
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion400m": {
+        "full": 38.839506172839506,
+        "classwise": {
+            "Annual Crop Land": 0.8888888888888888,
+            "Forest": 20.77777777777778,
+            "Herbaceous Vegetation Land": 8.333333333333334,
+            "Highway or Road": 46.0,
+            "Industrial Buildings": 44.8,
+            "Pasture Land": 65.33333333333333,
+            "Permanent Crop Land": 67.33333333333333,
+            "Residential Buildings": 73.88888888888889,
+            "River": 30.133333333333333,
+            "Sea or Lake": 45.22222222222222
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion2b": {
+        "full": 34.358024691358025,
+        "classwise": {
+            "Annual Crop Land": 0.2222222222222222,
+            "Forest": 3.888888888888889,
+            "Herbaceous Vegetation Land": 1.5555555555555556,
+            "Highway or Road": 54.266666666666666,
+            "Industrial Buildings": 87.86666666666666,
+            "Pasture Land": 0.3333333333333333,
+            "Permanent Crop Land": 94.8,
+            "Residential Buildings": 37.77777777777778,
+            "River": 71.06666666666666,
+            "Sea or Lake": 8.88888888888889
+        }
+    },
+    "backboneViT-B-32_pretraineddatacomp": {
+        "full": 42.45679012345679,
+        "classwise": {
+            "Annual Crop Land": 0.1111111111111111,
+            "Forest": 45.0,
+            "Herbaceous Vegetation Land": 0.2222222222222222,
+            "Highway or Road": 52.13333333333333,
+            "Industrial Buildings": 63.46666666666667,
+            "Pasture Land": 13.666666666666666,
+            "Permanent Crop Land": 95.33333333333333,
+            "Residential Buildings": 63.77777777777778,
+            "River": 72.0,
+            "Sea or Lake": 28.11111111111111
+        }
+    },
+    "backboneViT-B-16_pretrainedlaion400m": {
+        "full": 40.876543209876544,
+        "classwise": {
+            "Annual Crop Land": 8.0,
+            "Forest": 51.77777777777778,
+            "Herbaceous Vegetation Land": 0.1111111111111111,
+            "Highway or Road": 54.0,
+            "Industrial Buildings": 96.4,
+            "Pasture Land": 37.333333333333336,
+            "Permanent Crop Land": 63.46666666666667,
+            "Residential Buildings": 54.77777777777778,
+            "River": 45.6,
+            "Sea or Lake": 12.11111111111111
+        }
+    },
+    "backboneViT-B-16_pretrainedlaion2b": {
+        "full": 41.888888888888886,
+        "classwise": {
+            "Annual Crop Land": 8.11111111111111,
+            "Forest": 6.222222222222222,
+            "Herbaceous Vegetation Land": 0.3333333333333333,
+            "Highway or Road": 54.0,
+            "Industrial Buildings": 94.66666666666667,
+            "Pasture Land": 7.666666666666667,
+            "Permanent Crop Land": 84.4,
+            "Residential Buildings": 79.77777777777777,
+            "River": 74.53333333333333,
+            "Sea or Lake": 21.11111111111111
+        }
+    },
+    "backboneViT-B-16_pretraineddatacomp": {
+        "full": 42.18518518518518,
+        "classwise": {
+            "Annual Crop Land": 2.7777777777777777,
+            "Forest": 20.666666666666668,
+            "Herbaceous Vegetation Land": 0.1111111111111111,
+            "Highway or Road": 74.8,
+            "Industrial Buildings": 88.8,
+            "Pasture Land": 4.166666666666667,
+            "Permanent Crop Land": 94.93333333333334,
+            "Residential Buildings": 66.88888888888889,
+            "River": 58.666666666666664,
+            "Sea or Lake": 22.11111111111111
+        }
+    },
+    "backboneViT-B-16_pretrainedcc12m": {
+        "full": 15.246913580246913,
+        "classwise": {
+            "Annual Crop Land": 19.555555555555557,
+            "Forest": 0.1111111111111111,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 17.066666666666666,
+            "Industrial Buildings": 54.0,
+            "Pasture Land": 0.0,
+            "Permanent Crop Land": 0.0,
+            "Residential Buildings": 1.0,
+            "River": 22.8,
+            "Sea or Lake": 38.333333333333336
+        }
+    },
+    "backboneViT-B-16_pretrainedcc3m": {
+        "full": 10.246913580246913,
+        "classwise": {
+            "Annual Crop Land": 0.0,
+            "Forest": 68.0,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 3.7333333333333334,
+            "Industrial Buildings": 4.8,
+            "Pasture Land": 0.16666666666666666,
+            "Permanent Crop Land": 0.4,
+            "Residential Buildings": 0.7777777777777778,
+            "River": 0.5333333333333333,
+            "Sea or Lake": 15.444444444444445
+        }
+    },
+    "backboneViT-L-14_pretrainedlaion400m": {
+        "full": 46.71604938271605,
+        "classwise": {
+            "Annual Crop Land": 45.888888888888886,
+            "Forest": 76.44444444444444,
+            "Herbaceous Vegetation Land": 0.2222222222222222,
+            "Highway or Road": 68.8,
+            "Industrial Buildings": 84.8,
+            "Pasture Land": 18.833333333333332,
+            "Permanent Crop Land": 54.266666666666666,
+            "Residential Buildings": 28.11111111111111,
+            "River": 89.2,
+            "Sea or Lake": 9.666666666666666
+        }
+    },
+    "backboneViT-L-14_pretrainedlaion2b": {
+        "full": 45.34567901234568,
+        "classwise": {
+            "Annual Crop Land": 0.0,
+            "Forest": 24.11111111111111,
+            "Herbaceous Vegetation Land": 3.111111111111111,
+            "Highway or Road": 68.53333333333333,
+            "Industrial Buildings": 89.46666666666667,
+            "Pasture Land": 25.833333333333332,
+            "Permanent Crop Land": 96.8,
+            "Residential Buildings": 62.0,
+            "River": 81.6,
+            "Sea or Lake": 21.333333333333332
+        }
+    },
+    "backboneViT-L-14_pretraineddatacomp": {
+        "full": 61.864197530864196,
+        "classwise": {
+            "Annual Crop Land": 83.22222222222223,
+            "Forest": 54.22222222222222,
+            "Herbaceous Vegetation Land": 0.1111111111111111,
+            "Highway or Road": 82.0,
+            "Industrial Buildings": 92.13333333333334,
+            "Pasture Land": 21.0,
+            "Permanent Crop Land": 18.0,
+            "Residential Buildings": 95.33333333333333,
+            "River": 88.13333333333334,
+            "Sea or Lake": 76.33333333333333
+        }
+    },
+    "backboneViT-H-14_pretrainedlaion2b": {
+        "full": 43.0,
+        "classwise": {
+            "Annual Crop Land": 80.22222222222223,
+            "Forest": 9.666666666666666,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 68.0,
+            "Industrial Buildings": 80.0,
+            "Pasture Land": 40.833333333333336,
+            "Permanent Crop Land": 14.666666666666666,
+            "Residential Buildings": 41.0,
+            "River": 96.4,
+            "Sea or Lake": 13.0
+        }
+    },
+    "backboneViT-g-14_pretrainedlaion2b": {
+        "full": 48.641975308641975,
+        "classwise": {
+            "Annual Crop Land": 0.1111111111111111,
+            "Forest": 38.77777777777778,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 74.13333333333334,
+            "Industrial Buildings": 93.86666666666666,
+            "Pasture Land": 12.0,
+            "Permanent Crop Land": 95.33333333333333,
+            "Residential Buildings": 72.22222222222223,
+            "River": 52.93333333333333,
+            "Sea or Lake": 55.111111111111114
+        }
+    },
+    "backboneViT-bigG-14_pretrainedlaion2b": {
+        "full": 56.50617283950617,
+        "classwise": {
+            "Annual Crop Land": 2.3333333333333335,
+            "Forest": 16.88888888888889,
+            "Herbaceous Vegetation Land": 41.111111111111114,
+            "Highway or Road": 53.333333333333336,
+            "Industrial Buildings": 95.73333333333333,
+            "Pasture Land": 4.0,
+            "Permanent Crop Land": 92.93333333333334,
+            "Residential Buildings": 80.66666666666667,
+            "River": 77.73333333333333,
+            "Sea or Lake": 98.44444444444444
+        }
+    },
+    "backboneRN50_pretrainedyfcc15m": {
+        "full": 19.62962962962963,
+        "classwise": {
+            "Annual Crop Land": 14.333333333333334,
+            "Forest": 0.0,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 64.13333333333334,
+            "Industrial Buildings": 14.266666666666667,
+            "Pasture Land": 0.0,
+            "Permanent Crop Land": 12.266666666666667,
+            "Residential Buildings": 1.8888888888888888,
+            "River": 0.4,
+            "Sea or Lake": 84.55555555555556
+        }
+    },
+    "backboneRN101_pretrainedyfcc15m": {
+        "full": 10.703703703703704,
+        "classwise": {
+            "Annual Crop Land": 0.0,
+            "Forest": 0.0,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 84.13333333333334,
+            "Industrial Buildings": 2.0,
+            "Pasture Land": 0.0,
+            "Permanent Crop Land": 10.0,
+            "Residential Buildings": 1.2222222222222223,
+            "River": 0.4,
+            "Sea or Lake": 14.666666666666666
+        }
+    },
+    "backboneViT-B-16_pretrainedyfcc15m": {
+        "full": 28.432098765432098,
+        "classwise": {
+            "Annual Crop Land": 6.666666666666667,
+            "Forest": 5.777777777777778,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 52.8,
+            "Industrial Buildings": 3.7333333333333334,
+            "Pasture Land": 0.0,
+            "Permanent Crop Land": 54.4,
+            "Residential Buildings": 63.55555555555556,
+            "River": 4.0,
+            "Sea or Lake": 84.11111111111111
+        }
+    },
+    "backboneViT-B-16_pretrainedsynthci30m": {
+        "full": 12.407407407407407,
+        "classwise": {
+            "Annual Crop Land": 7.666666666666667,
+            "Forest": 0.0,
+            "Herbaceous Vegetation Land": 12.88888888888889,
+            "Highway or Road": 18.133333333333333,
+            "Industrial Buildings": 15.733333333333333,
+            "Pasture Land": 41.5,
+            "Permanent Crop Land": 0.0,
+            "Residential Buildings": 20.444444444444443,
+            "River": 2.8,
+            "Sea or Lake": 12.444444444444445
+        }
+    },
+    "backboneViT-B-32_pretrainedlaion200m_train_test_sim_normalized": {
+        "full": 31.40740740740741,
+        "classwise": {
+            "Annual Crop Land": 19.88888888888889,
+            "Forest": 14.333333333333334,
+            "Herbaceous Vegetation Land": 0.0,
+            "Highway or Road": 16.533333333333335,
+            "Industrial Buildings": 76.13333333333334,
+            "Pasture Land": 0.8333333333333334,
+            "Permanent Crop Land": 53.06666666666667,
+            "Residential Buildings": 48.0,
+            "River": 87.73333333333333,
+            "Sea or Lake": 5.333333333333333
+        }
+    }
+}

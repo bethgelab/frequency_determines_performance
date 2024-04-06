@@ -1,0 +1,130 @@
+0.5 RAMPP threshold
+
+000000000.jpg                                                                            
+school bus | trolleybus | stands | Highway or Road | alley | courtyard | crosswalk | dri$
+eway | park | parking_lot | plaza | street | license-plate | people | school-bus | car | 
+truck | bus | man | road | floor | stop | bunch | step | crowd | couple | corner | trave$
+ | white | pair | outside | male | size | traffic | time | vehicle | turn | up | path | s
+quare | van | guy | close | photo | store | middle | roof | lot | place | ride | area | m
+en | rain | red | sidewalk | number | pavement | walkway | air | intersection | direction
+ | building | market | ground | image | day | walk | cross | town | passenger | side | co
+mmuter | setting | move | color | blanket | stand | water | green | picture | curb | driv
+e | figure | kind | pedestrian | way | city | line | person | roadway
+
+
+1                                                                                        
+000000001.jpg                                                                            
+Drumming | drum | jeans | T-shirt | music speaker | microphone | miniskirt | overskirt | 
+sandal | stage | sunglasses | front curtain | website | lights | her | stands | page | le
+ngth | dotted | gauzy | lined | pleated | striped | studded | zigzagged | people | t-shir
+t | girl | man | woman | step | female | couple | pose | shade | musician | sweater | dre
+ss | white | object | clothe | pair | event | back | dark | male | size | play | advertis
+ement | set | guitar | short | end | accessory | look | thing | guy | close | photo | mi$
+dle | individual | music | arrangement | band | shoulder | place | inside | plaid | men $
+ brown | red | variety | background | teenager | blue | instrument | black | knee | show
+| light | top | piece | pant | someone | shirt | image | part | hand | closeup | surface
+| bottom | side | photograph | color | item | attire | smile | skirt | leg | stand | clo$
+hing | green | silver | picture | lady | figure | party | vest | line | poster | outfit $
+ style | body | jean | person | boot | pattern | hair | spot
+
+2
+000000002.jpg
+bookcase | jeans | T-shirt | radiator | refrigerator | wardrobe | window screen | studio
+| her | stands | portrait | gauzy | pleated | bedroom | closet | clothing_store | hotel_r
+oom | house | living_room | thriftshop | camera | cellphone | mattress | t-shirt | clutte
+r | bed | boy | girl | man | woman | flooring | floor | bunch | sofa | step | female | po
+se | corner | sweater | dress | white | object | clothe | pair | home | onlooker | back |
+ stair | male | box | size | stack | pile | adult | set | up | short | sort | rack | thin
+g | luggage | coat | close | photo | shot | individual | doorway | inside | jump | apartm
+ent | men | wall | red | suitcase | phone | towel | drawer | room | sheet | teenager | ai
+r | kid | show | top | furniture | shirt | image | walk | cabinet | hand | jacket | botto
+m | side | stuff | shelf | color | item | attire | smile | leg | blanket | child | stand
+| clothing | model | picture | pack | lady | figure | curtain | body | jean | cloth | per
+son | storage
+
+
+3                                                                                        
+000000003.jpg                                                                            
+baluster / handrail | spiral or coil | stone wall | couch | television | window screen | 
+studio | lights | spiralled | dining_room | house | kitchen | living_room | parlor | stai
+rcase | chair | lamp | lightbulb | clock | flooring | floor | sofa | step | corner | fra$
+e | white | home | dark | stair | set | up | tv | close | photo | foreground | doorway |
+inside | apartment | plant | brown | wall | fireplace | window | room | railing | rail |
+show | light | furniture | image | side | fire | design | color | ceiling | brick | pict$
+re | figure | door | style | sculpture | display
+
+4
+000000004.jpg
+fly | projectile | screwdriver | torch | her | being | robot | cartoon | illustration | $
+auzy | sky | wave | scissors | human-skeleton | knife | people | sword | man | woman | h$
+ndle | floor | rider | female | pose | shade | white | object | male | set | up | path |
+device | midair | guy | close | photo | head | scissor | screen | arm | inside | break |
+glove | stick | men | red | statue | motion | sign | air | blue | black | mitt | show | $
+iece | control | someone | image | part | hand | closeup | surface | space | side | desi$
+n | color | metal | leg | plastic | water | silver | model | picture | figure | way | po$
+ter | machine | style | sculpture | body | display | person
+
+5
+000000005.jpg
+Basketball | Basketball_Dunk | basketball | chain | T-shirt | microphone | necklace | sne
+aker | stage | sweatshirt | her | stands | comic | indoor gymnasium | wave | face | cellp
+hone | people | t-shirt | boy | man | woman | floor | step | crowd | female | couple | po
+se | dress | white | clothe | pair | event | court | action | onlooker | male | jersey |
+hat | play | adult | set | turn | up | short | end | guy | shot | middle | head | individ
+ual | competition | music | run | eye | arm | stadium | place | break | coach | men | red
+ | opponent | team | player | teenager | audience | black | center | ball | show | top |
+piece | game | trick | half | someone | shirt | hand | side | setting | move | attire | s
+mile | leg | child | conversation | stand | spectator | sport | picture | bench | figure
+| kind | party | playing | person
+
+6                                                                                        
+000000006.jpg                                                                            
+lighthouse | dock | fountain | greenhouse | patio | pedestal | pier | pole | umbrella | w
+ebsite | circle | her | being | stands | diagram | length | shape | illustration | drawi$
+g | Forest | Herbaceous Vegetation Land | River | Sea or Lake | boardwalk | bridge | nat$
+ral canal | courtyard | exterior gazebo | outdoor greenhouse | herb_garden | house | isl$
+t | ocean | park | plaza | outdoor podium | pond | river | swamp | tower | vegetable_gar$
+en | fan waterfall | yard | horse | light-house | people | forest | man | road | sea | w$
+man | floor | bunch | step | female | couple | corner | habitat | shade | travel | white
+| fence | object | island | concrete | pair | outside | male | grassy | size | disc | wi$
+d | time | grass | ramp | lawn | set | bush | sort | path | end | square | lake | thing $
+ view | guy | close | photo | foreground | middle | platform | individual | roof | boat $
+ arrangement | lot | art | zoo | shore | place | inside | area | men | plant | wall | va$
+iety | group | background | railing | number | pavement | walkway | air | blue | deck | $
+eave | center | flower | show | exhibit | light | direction | other | animal | building $
+ piece | mirror | edge | one | someone | distance | ground | image | landscape | walk | $
+ross | tree | part | life | surface | structure | space | side | garden | pool | land | $
+esign | setting | color | item | blanket | stand | water | green | reflection | model | $
+icture | bench | figure | kind | way | city | line | work | sculpture | body | display |
+person | field | planter | living | spot
+
+000000007.jpg
+scarf | circle | illustration | dotted | gauzy | lacelike | paisley | peacock | shade | f
+rame | white | set | square | arrangement | brown | red | blue | flower | decoration | cl
+oseup | surface | design | color | blanket | green | rug | style | pattern
+
+000000008.jpg
+hockey puck | ski | her | stands | face | people | boy | man | woman | floor | step | cro
+wd | female | corner | white | clothe | pair | action | onlooker | back | male | gentlema
+n | jersey | play | ice | turn | up | short | end | guy | close | photo | uniform | head
+| individual | competition | skate | gear | stadium | place | ride | break | stick | men
+| red | opponent | board | race | motion | player | blue | icing | mitt | knee | gold | t
+op | snow | game | someone | shirt | image | hand | closeup | stone | jacket | surface |
+side | helmet | setting | move | attire | leg | spectator | water | silver | sport | pict
+ure | way | foot | playing | body | cap | person | pitch
+
+9                                                                                        
+000000010.jpg                                                                            
+fly | airliner | pole | airplane wing | mountain | stands | Highway or Road | airport_te$
+minal | outdoor arrival_gate | highway | park | outdoor parking_garage | parking_lot | r$
+ceway | runway | sky | street | toll_plaza | yard | airplane | license-plate | airplanes 
+| car | truck | man | plain | road | 707-320 | 727-200 | 737-200 | 737-300 | 737-400 | 7$
+7-500 | 737-600 | 737-700 | 737-800 | 737-900 | 747-100 | 747-200 | 747-300 | 747-400 | $
+57-200 | 757-300 | 767-200 | 767-300 | 767-400 | 777-200 | 777-300 | A300B4 | A310 | A31$
+ | A319 | A320 | A321 | A330-200 | A330-300 | A340-200 | A340-300 | A340-500 | A340-600 $ A380 | ATR-42 | ATR-72 | BAE-125 | Boeing 717 | CRJ-200 | CRJ-700 | CRJ-900 | DC-10 | D$-6 | DC-8 | DC-9-30 | DHC-8-100 | DHC-8-300 | E-170 | E-190 | E-195 | EMB-120 | ERJ 135 $ ERJ 145 | Fokker 100 | Fokker 70 | L-1011 | MD-11 | MD-80 | MD-87 | MD-90 | Saab 2000 |
+Saab 340 | Tu-134 | Tu-154 | Yak-42 | floor | stop | gate | step | crowd | couple | trav$l | white | fence | pair | back | outside | traffic | vehicle | ramp | pile | turn | wor$er | end | midair | luggage | close | photo | boarding | lot | place | ride | area | pla$e | jet | railing | number | terminal | airport | air | blue | flight | direction | dist$nce | ground | image | day | wheel | part | passenger | side | land | setting | move | d$sert | blanket | stand | water | picture | drive | parking | door | way | city | line | $armac | jetliner | display | roadway
+
+000000013.jpg
+Shaving_Beard | movie theater | comic | cup | man | pose | white | event | male | play | set | carpet | guy | music | place | men | red | race | black | show | jacket | setting | smile | picture | rug | party
+
+
