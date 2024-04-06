@@ -22,7 +22,7 @@ pip install -r requirements.txt
 We provide detailed instructions on how to set up both pretraining and downstream test datasets in [`data/README.md`](https://github.com/bethgelab/frequency_determines_performance/blob/main/data/README.md).
 
 ## Exploring and Running Concept Frequency Analyses
-We now describe how to run the different analyses we do in the paper independently below.
+We now describe how to run the different analyses in the paper independently below.
 
 #### Extracting concepts
 For the zero-shot classification tasks, the concepts are simply the classnames. For the retrieval tasks, we present how to run the script for extracting the concepts here:
