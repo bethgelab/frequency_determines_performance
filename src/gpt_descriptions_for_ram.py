@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(
     description='Generate LLM tag descriptions for RAM++ open-set recognition')
 parser.add_argument('--output_file_path',
                     help='save path of llm tag descriptions',
-                    default='/home/vu214/blind_name_only_transfer/gpt_descriptions')
+                    default='../gpt_descriptions')
 # for zero-shot classification datasets, pass in dataset name
 # for retrieval tasks, pass in `retrieval`, it will read from `ram_model/ram/data/ram_tag_list_for_retrieval_tasks_non_overlapping_with_zs_concepts.txt`
 # for t2i tasks, pass in `t2i`, it will read from `ram_model/ram/data/ram_tag_list_for_t2i_tasks_non_overlapping_with_zs_concepts.txt` or the updated `ram_model/ram/data/ram_tag_list_for_updated_t2i_tasks_non_overlapping_with_previous_concepts.txt`
