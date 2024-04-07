@@ -168,7 +168,7 @@ print(y_vals)
 
 # plt.scatter(x_vals, y_vals)
 
-nb = 8
+nb = 5
     
 bins = np.linspace(min(np.log(x_vals)), max(np.log(x_vals)), num=nb)
 assigned_bins = np.digitize(np.log(x_vals), bins, right=True)
