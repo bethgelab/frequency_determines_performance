@@ -53,6 +53,9 @@ cd t2i
 python image_generation.py --load_prompts <path_to_prompts_file> --save_dir <directory_to_save_images> --pipe <t2i-pipeline> --model_id <huggingface_model_id>
 ```
 
-where `<path_to_prompts_file>` is the path to one of the two .pkl files mentioned above. Refer to `image_generation.py` for more details on the remaining arguments. Feel free to experiment with different T2I models, batch sizes(for faster generations) and image sizes.
+where `<path_to_prompts_file>` is the path to one of the two .pkl files mentioned above. Refer to `image_generation.py` for more details on the remaining arguments. Feel free to experiment with different T2I models, batch sizes (for faster generations) and image sizes.
 We currently provide code for [SDXL](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0), [SDv2](https://huggingface.co/stabilityai/stable-diffusion-2-1) and [Dreamlike-Photoreal](https://huggingface.co/dreamlike-art/dreamlike-photoreal-2.0).
+
+### Human Evaluation Experiment on Public Figures
+To do a more controlled study on concept frequencies and image generation models, we ran an additional experiment where we collected frequency data of public figures. All the scripts for this experiment are provided in the [human_experiment_evaluation](https://github.com/bethgelab/frequency_determines_performance/tree/main/src/text_to_image_experiments/human_experiment_evaluation) folder. For more details, please see Appendix C in the paper.
 
