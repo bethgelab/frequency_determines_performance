@@ -89,6 +89,9 @@ The results will be saved directly as json files. For convenience, we have also 
 #### Plotting
 All the plots in our paper can be reproduced using the notebooks provided in the [`notebooks`](https://github.com/bethgelab/frequency_determines_performance/tree/main/notebooks) folder. The notebooks should be self-explanatory, please open an issue if something is unclear.
 
+#### Text-to-image generation experiments
+We provide all details on data collection, processing and running experiments for our text-to-image generation experiments here: [https://github.com/bethgelab/frequency_determines_performance/blob/main/src/text_to_image_experiments/README.md](https://github.com/bethgelab/frequency_determines_performance/blob/main/src/text_to_image_experiments/README.md). Please follow the instructions in that folder to reproduce all the text to image generation data collection steps.
+
 #### Additional insights
 You can reproduce our long-tailed nature plot from the [`notebooks/long-tailed-nature.ipynb`](https://github.com/bethgelab/frequency_determines_performance/blob/main/notebooks/long-tailed-nature.ipynb) notebook. The correlations between different pretraining dataset concept distributions numbers can be reproduced here: [`notebooks/correlations_between_pretraining_frequencies.ipynb`](https://github.com/bethgelab/frequency_determines_performance/blob/main/notebooks/correlations_between_pretraining_frequencies.ipynb). Finally, for quantifying the misalignment ratio, this is the script we use:
 ```bash
