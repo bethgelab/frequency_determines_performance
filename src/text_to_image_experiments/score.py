@@ -1,181 +1,120 @@
-import json
-import spacy
 import os
-import pickle
-from nltk.corpus import wordnet as wn
+import json
+import argparse
+
+from concept_extraction import *
+from utils import *
+from scores_collected import *
 
 
-def score_index(score, metric):
-    index = None
-    for i, entry in enumerate(data_score):
-        for stat in entry['stats']:
-            if stat['name']['name'] == metric:
-                index = i
-                break
-        if index is not None:
-            break
+def main():
+    parser = argparse.ArgumentParser(description="Saving JSON files for t2i from the HEIM website")
 
-    return index
+    parser.add_argument(
+        "--root_dir", default="data/",
+        help="root directory to save all results", type=str)
 
+    parser.add_argument(
+        "--save_dir", default="results/",
+        help="root directory to save all results", type=str)
 
-def find_word_indices(prompts, words):
-    word_indices = {}
+    parser.add_argument("--dataset",
+                        default='cub200',
+                        help="Which dataset to use. Refer to the README for more", type=str)
 
-    for word in words:
-        index_list = []
-        for index, prompt in enumerate(prompts):
-            if f' {word} ' in f' {prompt} ':  # Ensure exact word match
-                index_list.append(index)
-        word_indices[word] = index_list
-    word_indices_final = {key: value for key, value in word_indices.items() if value != []}
-    return word_indices_final
+    parser.add_argument('--combine', action='store_true', help='Combine all datasets')
+    args = parser.parse_args()
 
+    # List of valid models
+    models = ["AlephAlpha_m-vader", "DeepFloyd_IF-I-L-v1.0", "DeepFloyd_IF-I-M-v1.0", "DeepFloyd_IF-I-XL-v1.0",
+              "adobe_giga-gan", "craiyon_dalle-mega", "craiyon_dalle-mini", "huggingface_dreamlike-diffusion-v1-0",
+              "huggingface_dreamlike-photoreal-v2-0","huggingface_openjourney-v1-0", "huggingface_openjourney-v2-0",
+              "huggingface_promptist-stable-diffusion-v1-4","huggingface_redshift-diffusion",
+              "huggingface_stable-diffusion-safe-max","huggingface_stable-diffusion-safe-medium",
+              "huggingface_stable-diffusion-safe-strong", "huggingface_stable-diffusion-safe-weak",
+              "huggingface_stable-diffusion-v1-4", "huggingface_stable-diffusion-v1-5",
+              "huggingface_stable-diffusion-v2-1-base","huggingface_stable-diffusion-v2-base",
+              "huggingface_vintedois-diffusion-v0-1", "kakaobrain_mindall-e", "lexica_search-stable-diffusion-1.5"]
 
-def concept_mod(dict, size):
-    new_dict = {}
-    for key, value in dict.items():
-        if len(value) >= size:
-            new_dict[key] = value
-    return new_dict
+    if not args.combine:
+        for model in models:
+            print("Using model: ", model)
+            if args.dataset == "mscoco" or args.dataset == "winoground":
+                results = winoground_mscoco(model, args)
 
+            elif args.dataset == "cub200":
+                results = cub200(model, args)
 
-def calculate_average_scores(indices, scores):
-    average_scores = {}
+            else:
+                results = other_models(model, args)
 
-    for key, index_list in indices.items():
-        key_scores = []
-        for index in index_list:
-            if index < len(scores):
-                key_scores.append(scores[index][1:])  # Skipping index 0 and taking every other element
+            with open(os.path.join(args.root_dir, 'words_uniq.txt'), 'r') as file:
+                concepts = [line.rstrip('\n') for line in file]
+            concepts = [x.lower() for x in concepts]
+            # concepts = list(dict.fromkeys(concepts))
+            concepts_all = find_word_indices([sublist[0] for sublist in results], concepts)
+            concepts_copy = concepts_all.copy()
 
-        if key_scores:
-            num_sublists = len(key_scores)
-            sublist_length = len(key_scores[0])
-            averaged_sublist = [sum(col) / num_sublists for col in zip(*key_scores)]
-            average_scores[key] = averaged_sublist
+            aggregated_scores = calculate_aggregated_scores(concepts_all, results)
+
+            if not os.path.exists(os.path.join(args.save_dir, args.dataset)):
+                os.makedirs(os.path.join(args.save_dir, args.dataset))
+            with open(os.path.join(args.save_dir, args.dataset, f'{model}_score_all.pkl'), 'wb') as f:
+                pickle.dump(aggregated_scores, f)
+
+        if args.dataset == "mscoco" or args.dataset == "winoground":
+            winoground_mscoco_collect(args)
+
+        elif args.dataset == "cub200":
+            cub200_collect(args)
+
         else:
-            average_scores[key] = None  # for empty index lists
+            other_models_collect(args)
+    else:
+        # BRING IT ALL TOGETHER
+        all_files = []
+        for root, dirs, files in os.walk(args.save_dir):
+            for file in files:
+                if file != '.DS_Store' and file.endswith('.json'):  # Exclude .DS_Store files
+                    file_path = os.path.join(root, file)
+                    all_files.append(file_path)
 
-    return average_scores
+        hae, ha, ma, ea, mc, ec, el, es, ep, eu = [], [], [], [], [], [], [], [], [], []
+        task_lists = {'human_aesthetics': hae, 'human_align': ha, 'max_aesthetics': ma,
+                      'exp_aesthetics': ea, 'max_clip': mc, 'exp_clip': ec,
+                      'exp_lpips': el, 'exp_ssim': es, 'exp_psnr': ep, 'exp_uiqi': eu}
+        # categorise the files
+        for file in all_files:
+            task = '_'.join(file.split('_')[-2:]).split('.')[0]
+            if task in task_lists:
+                task_lists[task].append(file)
 
+        for task, file_list in task_lists.items():
+            print(f"Task: {task}")
+            all_concepts = {model_name: {'full': 0.0, 'classwise': {}} for model_name in models}
 
-# get root path
-dataset = "draw_bench"
+            for file in file_list:
+                with open(file, 'r') as f:
+                    # print(file)
+                    data = json.load(f)
+                    for model, model_data in data.items():
+                        # all_concepts[model]['full'].append(model_data['full'])
+                        all_concepts[model]['full'] += (model_data['full'] * sum(
+                            len(sublist) for sublist in model_data['classwise'].values()))
+                        for key, value in data[model]['classwise'].items():
+                            if key not in all_concepts[model]['classwise']:
+                                all_concepts[model]['classwise'][key] = value
+                            else:
+                                all_concepts[model]['classwise'][key] += value
 
-#root for the per-model score and prompt files. For me it is in t2i/data/. Change this to your root directory
-root_dir = "data/"
+            for model, model_data in all_concepts.items():
+                sorted_keys = sorted(model_data['classwise'].keys())
+                all_concepts[model]['classwise'] = {key: model_data['classwise'][key] for key in sorted_keys}
+                model_data['full'] = model_data['full'] / sum(
+                    len(sublist) for sublist in model_data['classwise'].values())
 
-save_dir = "results/"
-all_prompts = []
-models = [f for f in os.listdir(root_dir + dataset) if os.path.isdir(os.path.join(root_dir, dataset, f))]
-for model in models:
-    print("Using model: ", model)
-    score_dir = os.path.join(root_dir, dataset, model, "score/")
-    prompt_dir = os.path.join(root_dir, dataset, model, "prompt/")
+            with open(os.path.join(args.save_dir, f'{task}.json'), 'w') as f:
+                json.dump(all_concepts, f, indent=4)
 
-    categories = [f for f in sorted(os.listdir(score_dir)) if not f.startswith('.')]
-
-    results = []
-    for category in categories:
-        print("Using category: ", category)
-        with open(os.path.join(score_dir, category)) as f:
-            data_score = json.load(f)
-
-        with open(os.path.join(prompt_dir, category)) as f:
-            data_prompt = json.load(f)
-
-        for i in range(len(data_prompt)):
-            if dataset == 'coco':
-                #have to do this because COCO does not have the same number of scores for each prompt
-                # therefore there are inconsistent indices
-                aesthetic_index = score_index(data_score, "expected_aesthetics_score")
-                item_aesthetic = data_score[i + aesthetic_index]
-
-                clip_index = score_index(data_score, 'expected_clip_score')
-                item_clip = data_score[i + clip_index]
-
-                human_index = score_index(data_score, 'image_text_alignment_human')
-                item_human = data_score[i + human_index]
-            else:
-                item_aesthetic = data_score[i]
-                item_clip = data_score[i + len(data_prompt)]
-
-            instance_id = data_prompt[i]['id']
-            aesthetic_id = item_aesthetic['instance_id']
-            clip_id = item_clip['instance_id']
-            if dataset == 'coco':
-                human_id = item_human['instance_id']
-                assert aesthetic_id == clip_id == instance_id == human_id
-            else:
-                assert aesthetic_id == clip_id == instance_id
-
-            exp_aesthetic_score_sum = item_aesthetic['stats'][0]['sum']
-            max_aesthetic_score_sum = item_aesthetic['stats'][1]['sum']
-            exp_clip_score_sum = item_clip['stats'][0]['sum']
-            max_clip_score_sum = item_clip['stats'][1]['sum']
-
-            if dataset == 'coco':
-                mean_align = item_human['stats'][0]['mean']
-                mean_aesthetic = item_human['stats'][2]['mean']
-                results.append([data_prompt[i]['input']['text'].lower(),
-                                exp_aesthetic_score_sum, max_aesthetic_score_sum,
-                                exp_clip_score_sum, max_clip_score_sum,
-                                mean_align, mean_aesthetic])
-            else:
-                results.append([data_prompt[i]['input']['text'].lower(),
-                                exp_aesthetic_score_sum, max_aesthetic_score_sum,
-                                exp_clip_score_sum, max_clip_score_sum])
-
-    #load the concepts from the unigram dict
-    with open(f'/concepts/{dataset}/test_0_unigram_dict.pkl', 'rb') as f:
-        concepts = pickle.load(f)
-
-    concepts = list(concepts.keys())
-    concepts = [x.lower() for x in concepts]
-    concepts = list(dict.fromkeys(concepts))
-
-    #get the indices of the prompts where the concept is found
-    concepts_all = find_word_indices([sublist[0] for sublist in results], concepts)
-    # concepts_copy = concepts_all.copy()
-    # for concept in concepts_copy:
-    #     syn = wn.synsets(concept)
-    #     if not syn:
-    #         continue
-    #     else:
-    #         tmp = syn[0].pos()
-    #         if tmp == 'v' or tmp == 'a' or tmp == 's':
-    #             print(concept)
-    #             print(syn[0].pos())
-    #             del concepts_all[concept]
-    # if dataset == 'parti':
-    #     rem = ['orange', 'yellow', 'red', 'blue', 'green', 'times', 'great', 'inside', 'style', 'art', 'left',
-    #            'right', '', 'a', 'smiling', 'liberty', 'one', 'white']
-    # elif dataset == 'draw_bench':
-    #     rem = ['or', 'right', 'left', 'green', 'middle', 'view', 'side', 'it', 'orange']
-    # else:
-    #     rem = ['their', 'his', 'talking', 'an', 'the', 'to', 'are', 'two', 'large', 'standing', 'looking', 'black',
-    #            'white', 'blue', 'serving', 'it', 'at', 'along', 'waiting', 'riding', 'walking', 'in', 'old', 'young',
-    #            'small', 'surfing', 'taking', 'down', 'a', 'holding', 'wearing', 'into', 'three', 'this', 'little',
-    #            'living', 'green', 'red', 'sitting']
-    #
-    # for re in rem:
-    # del concepts_all[re]
-    #
-    # if dataset == 'draw_bench' or dataset == 'coco':
-    #     thres = 2
-    # elif dataset == 'parti':
-    #     thres = 5
-    #
-    # concepts_thres = concept_mod(concepts_all, thres)
-
-    avg_scores_all = calculate_average_scores(concepts_all, results)
-    # avg_scores_thres = calculate_average_scores(concepts_thres, results)
-
-    if not os.path.exists(os.path.join(save_dir, dataset)):
-        os.makedirs(os.path.join(save_dir, dataset))
-    with open(os.path.join(save_dir, dataset, f'{model}_score_all.pkl'), 'wb') as f:
-       pickle.dump(avg_scores_all, f)
-
-    # with open(os.path.join(save_dir, dataset, f'{model}_score_{thres}.pkl'), 'wb') as f:
-    # pickle.dump(avg_scores_thres, f)
-    # print("Number of results",len(results))
+if __name__ == '__main__':
+    main()
