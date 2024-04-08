@@ -99,6 +99,9 @@ python src/misalignment_degree_quantification.py --pt_dataset <cc3m/cc12m/laion4
 ```
 We also provide the logs of the misalignment ratios we computed for all datasets here: [`misalignment_metrics`](https://github.com/bethgelab/frequency_determines_performance/tree/main/misalignment_metrics).
 
+## Releasing data research artefacts
+We will release all our processed pretraining and downstream data files (features, indexes etc) (about 300GB) soon. We are currently uploading them to Huggingface, we will update the link here soon!
+
 ## _Let It Wag!_ Dataset
 We provide details about the construction of the Let It Wag! dataset in the [`let_it_wag_datasets`](https://github.com/bethgelab/frequency_determines_performance/tree/main/let_it_wag_datasets) folder. The list of 290 concepts included in the dataset are here: [`let_it_wag_datasets/let_it_wag_class_list.txt`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/let_it_wag_class_list.txt). The full classification dataset is hosted on Huggingface: [https://huggingface.co/datasets/bethgelab/Let-It-Wag](https://huggingface.co/datasets/bethgelab/Let-It-Wag). All the zero-shot evaluations are released here: [`let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json)
 
