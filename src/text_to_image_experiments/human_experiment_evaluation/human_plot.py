@@ -23,11 +23,11 @@ rcParams["ytick.labelsize"] = 15
 
 concept = 'entity'
 entity_path = 'entities/P31_Q5_50000'
-participants = ['Nicholas','Daphne','Matthew','Milad','Yash','Katherine']
+participants = ['P1','P2','P3','P4','P5','P6']
 version = 1
 only_all = True
 only_participants = False
-only_participant = 'Katherine'
+only_participant = 'P6'
 headshot_of = True
 headshot = False
 with open(os.path.join(f'{entity_path}/cnt_space.npy'), 'rb') as f:
@@ -77,25 +77,7 @@ def get_buckets(df_o):
     print(f"Total count: {total_count}")
     return buckets, bucket_dfs, df
 buckets, bucket_dfs, df = get_buckets(df_o)
-"""
-bucket_results = []
-for i, (bucket_indices, count, minimum, maximum) in enumerate(buckets):
-    samples = os.listdir(f"/home/yashjsharma/yash-internship/buckets{'' if concept == 'entity' else '_act'}/bucket_{i}{'_hsof' if headshot_of else '_hs' if headshot else ''}/samples")
-    text_probs = torch.load(f"/home/yashjsharma/yash-internship/buckets/bucket_{i}_hsof_clip.pt", 
-                            map_location=torch.device('cpu'))[np.argsort(samples)]
-    gt_idx = torch.tensor(df_o.index[df.index][bucket_indices].tolist()[:len(text_probs)]).to(text_probs.device)
-    if len(text_probs) > len(gt_idx): #txt2image didn't error out on last batch
-        try:
-            assert len(text_probs) % len(gt_idx) == 0
-        except AssertionError:
-            print(i)
-            continue
-        multiple = len(text_probs) // len(gt_idx)
-        gt_idx = gt_idx.repeat(multiple)
-    bucket_results.append(torch.argmax(text_probs, dim=-1) == gt_idx).float()
-print(bucket_results)
-"""
-#values_ = [bucket_accuracy]
+
 bucket_accuracy_mturks = {}
 if not only_participants:
     bucket_accuracy_mturks['all'] = defaultdict(list)
@@ -111,13 +93,11 @@ for participant in participants:
                 for key, value in bucket_accuracy_mturk.items():
                     bucket_accuracy_mturks['all'][key].extend(value)
 ranges = [(x[2], x[3]) for i,x in enumerate(buckets) if i <= 45]
-#assert len(ranges) == len(bucket_accuracy)
+
 fig, ax = plt.subplots(figsize=(6.4, 4.8))
 
 ax.set_xscale('log')
-#labels = ['CLIP'] +  list(bucket_accuracy_mturks.keys())
 labels = list(bucket_accuracy_mturks.keys())
-#colors = ['black'] +  list(mcolors.TABLEAU_COLORS.values())
 colors = list(mcolors.TABLEAU_COLORS.values())
 patches = []
 
@@ -128,7 +108,6 @@ for j in range(len(labels)):
     for i, (xmin, xmax) in enumerate(ranges):
         center = (xmin + xmax) / 2
         if False:
-        #if labels[j] == 'CLIP':
             val = bucket_accuracy[i]
         else:
             if bucket_accuracy_mturks[labels[j]][i]:
@@ -139,8 +118,6 @@ for j in range(len(labels)):
             x_vals.append(center)
             y_vals.append(val)
             print(center, val)
-            # ax.plot(center, val, 'o', color='indianred')
-            # ax.plot([xmin, xmax], [val, val], '-', color='gray')
     patches.append(plt.Line2D([], [], color=colors[j], marker='o', label=labels[j])) 
 
 A_1 = np.vstack([x_vals, np.ones(len(x_vals))]).T
@@ -149,7 +126,6 @@ print(m_1)
 
 x_line_1 = np.array([min(x_vals), max(x_vals)])
 y_line_1 = m_1 * x_line_1 + c_1
-# plt.plot(x_line_1, y_line_1, c='black', label='Fitted line 1', alpha=0.4, linewidth=2)
 
 
 pairs = zip(x_vals, y_vals)
@@ -214,15 +190,10 @@ plt.plot(np.exp(bins), cummeans, marker='o', linestyle='solid', alpha=0.6, marke
 
 ax.set_xlabel('Pretraining Concept Frequency')
 ax.set_ylabel('Human Accuracy')
-#ax.set_ylim([0, 1])
-# ax.spines['right'].set_visible(False)
-# ax.spines['top'].set_visible(False)
-#blue_patch = plt.Line2D([], [], color='blue', marker='o', label='human (unambig)')
-# ax.legend(handles=patches)
 plt.legend(loc='best', fontsize=16)
 plt.tight_layout()
 plt.grid()
-plt.show()
+# plt.show()
 plot_name = f"clip_count{vers}{''.join(list(bucket_accuracy_mturks.keys()))}{'_hsof' if headshot_of else '_hs' if headshot else ''}"
 print(plot_name)
 fig.savefig(plot_name, dpi=900)
