@@ -1,4 +1,4 @@
-# Pretraining Concept Frequency determines Multimodal Model Performance [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-360/) [![PyTorch](https://img.shields.io/badge/PyTorch-grey.svg?logo=PyTorch)](https://pytorch.org/blog/pytorch-1.9-released/) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/bethgelab/Let-It-Wag) [![Paper](http://img.shields.io/badge/paper-arxiv.2211.16198-B31B1B.svg)](https://arxiv.org/abs/2211.16198)
+# Pretraining Concept Frequency determines Multimodal Model Performance [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-360/) [![PyTorch](https://img.shields.io/badge/PyTorch-grey.svg?logo=PyTorch)](https://pytorch.org/blog/pytorch-1.9-released/) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/bethgelab/Let-It-Wag) [![Paper](http://img.shields.io/badge/paper-arxiv.2404.04125-B31B1B.svg)](https://arxiv.org/abs/2404.04125)
 
 This is the official codebase for the paper, "No Zero-Shot Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance".
 Authors: [Vishaal Udandarao*](http://vishaal27.github.io/), [Ameya Prabhu*](https://drimpossible.github.io/), [Adhiraj Ghosh](https://adhirajghosh.github.io/), [Yash Sharma](https://www.yash-sharma.com/), [Philip H.S. Torr](https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en), [Adel Bibi](https://www.adelbibi.com/), [Samuel Albanie](http://samuelalbanie.com/) and [Matthias Bethge](https://scholar.google.com/citations?user=0z0fNxUAAAAJ). 
@@ -101,6 +101,17 @@ We also provide the logs of the misalignment ratios we computed for all datasets
 
 ## _Let It Wag!_ Dataset
 We provide details about the construction of the Let It Wag! dataset in the [`let_it_wag_datasets`](https://github.com/bethgelab/frequency_determines_performance/tree/main/let_it_wag_datasets) folder. The list of 290 concepts included in the dataset are here: [`let_it_wag_datasets/let_it_wag_class_list.txt`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/let_it_wag_class_list.txt). The full classification dataset is hosted on Huggingface: [https://huggingface.co/datasets/bethgelab/Let-It-Wag](https://huggingface.co/datasets/bethgelab/Let-It-Wag). All the zero-shot evaluations are released here: [`let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json`](https://github.com/bethgelab/frequency_determines_performance/blob/main/let_it_wag_datasets/evaluations/let_it_wag_ensemble_results.json)
+
+## Citation
+If you find this work useful to your research, please consider citing as:
+```
+@article{udandarao2024zeroshot,
+  title={No "Zero-Shot" Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance},
+  author={Udandarao, Vishaal and Prabhu, Ameya and Ghosh, Adhiraj and Sharma, Yash and Torr, Philip H. S. and Bibi, Adel and Albanie, Samuel and Bethge, Matthias},
+  journal={arXiv preprint arXiv:2404.04125},
+  year={2024}
+}
+```
 
 ## Contact
 Please feel free to open an issue or email us at [vu214@cam.ac.uk](mailto:vu214@cam.ac.uk) or [ameya@prabhu.be](mailto:ameya@prabhu.be).
