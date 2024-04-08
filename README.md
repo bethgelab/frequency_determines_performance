@@ -1,6 +1,6 @@
 # Pretraining Concept Frequency determines Multimodal Model Performance [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-360/) [![PyTorch](https://img.shields.io/badge/PyTorch-grey.svg?logo=PyTorch)](https://pytorch.org/blog/pytorch-1.9-released/) [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/bethgelab/Let-It-Wag) [![Paper](http://img.shields.io/badge/paper-arxiv.2404.04125-B31B1B.svg)](https://arxiv.org/abs/2404.04125)
 
-This is the official codebase for the paper, "No Zero-Shot Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance".
+This is the official codebase for the paper, ["No Zero-Shot Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance"](https://arxiv.org/abs/2404.04125).
 Authors: [Vishaal Udandarao*](http://vishaal27.github.io/), [Ameya Prabhu*](https://drimpossible.github.io/), [Adhiraj Ghosh](https://adhirajghosh.github.io/), [Yash Sharma](https://www.yash-sharma.com/), [Philip H.S. Torr](https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en), [Adel Bibi](https://www.adelbibi.com/), [Samuel Albanie](http://samuelalbanie.com/) and [Matthias Bethge](https://scholar.google.com/citations?user=0z0fNxUAAAAJ). 
 
 ## Getting started
