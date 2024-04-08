@@ -116,5 +116,8 @@ If you find this work useful to your research, please consider citing as:
 }
 ```
 
+## Acknowledgements
+We thank the authors and contributors of these great papers/repositories for enabling our research: [CLIP](https://github.com/openai/CLIP), [open_clip](https://github.com/mlfoundations/open_clip), [CyCLIP](https://github.com/goel-shashank/CyCLIP), [SLIP](https://github.com/facebookresearch/SLIP/), [NLP-HuJI](https://huggingface.co/nlphuji), [quality-not-quantity](https://github.com/mlfoundations/clip_quality_not_quantity), [RAM++](https://github.com/xinyu1205/recognize-anything), [imagededup](https://github.com/idealo/imagededup), [fastdup](https://github.com/visual-layer/fastdup), [SynthCLIP](https://github.com/hammoudhasan/SynthCLIP), [SuS-X](https://github.com/vishaal27/sus-X/) and [CLIP-OOD](https://github.com/brendel-group/clip-ood).
+
 ## Contact
 Please feel free to open an issue or email us at [vu214@cam.ac.uk](mailto:vu214@cam.ac.uk) or [ameya@prabhu.be](mailto:ameya@prabhu.be).
