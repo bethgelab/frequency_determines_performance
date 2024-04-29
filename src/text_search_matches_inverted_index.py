@@ -14,15 +14,13 @@ import pickle
 import spacy
 nlp = spacy.load("en_core_web_sm")
 
-def search_for_text(args, unigram_index, multigram_index, search_terms, classname, return_indices=False):
+def search_for_text(args, unigram_index, search_terms, classname, return_indices=False):
 
     # Retrieve document sets for each term and store in a list
     doc_sets = [set(unigram_index[term]) for term in search_terms if term in unigram_index]
 
     # Perform set intersection to find common documents
     common_docs = set.intersection(*doc_sets) if doc_sets else set()
-
-    # Optionally handle multigrams here (if applicable)
 
     if return_indices:
         return common_docs, len(common_docs), classname
@@ -77,7 +75,7 @@ def search_in_full_index(args):
     result_dict = {}
     for batch_id, (batch, curr_classname_batch) in tqdm(enumerate(zip(search_texts_batched, classnames_batched)), ascii=True, total=len(search_texts_batched)):
         with ProcessPoolExecutor() as executor:
-            futures = [executor.submit(search_for_text, args, unigram_index, multigram_index, search_terms, classn) for search_terms, classn in zip(batch, curr_classname_batch)]
+            futures = [executor.submit(search_for_text, args, unigram_index, search_terms, classn) for search_terms, classn in zip(batch, curr_classname_batch)]
             # Print results as they complete
             for future in futures:
                 count, class_ = future.result()
@@ -168,7 +166,7 @@ def search_in_chunked_shards(args):
         # Using ProcessPoolExecutor to parallelize the search for multiple texts
         for batch_id, (batch, curr_classname_batch) in tqdm(enumerate(zip(search_texts_batched, classnames_batched)), ascii=True, total=len(search_texts_batched)):
             with ProcessPoolExecutor() as executor:
-                futures = [executor.submit(search_for_text, args, unigram_index, multigram_index, search_terms, classn, True) for search_terms, classn in zip(batch, curr_classname_batch)]
+                futures = [executor.submit(search_for_text, args, unigram_index, search_terms, classn, True) for search_terms, classn in zip(batch, curr_classname_batch)]
                 # Print results as they complete
                 for future in futures:
                     matched_indices, count, class_ = future.result()
